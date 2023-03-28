@@ -1,8 +1,8 @@
 [tool.poetry]
 name = "kopylot"
-version = "0.0.1"
+version = "0.0.0"
 description = "Your AI Powered Kubernetes Assistant"
-authors = ["Thiago Alves <ft>"]
+authors = ["Thiago Alves"]
 repository = "https://github.com/avsthiago/kopylot"
 documentation = "https://avsthiago.github.io/kopylot/"
 readme = "README.md"
