@@ -1,4 +1,4 @@
-# kopylot: Your AI Powered Kubernetes Assistant
+# **KoPylot**: Your AI-Powered Kubernetes Assistant 🤖
 
 [![Release](https://img.shields.io/github/v/release/avsthiago/kopylot)](https://img.shields.io/github/v/release/avsthiago/kopylot)
 [![Build status](https://img.shields.io/github/actions/workflow/status/avsthiago/kopylot/main.yml?branch=main)](https://github.com/avsthiago/kopylot/actions/workflows/main.yml?query=branch%3Amain)
@@ -6,49 +6,56 @@
 [![Commit activity](https://img.shields.io/github/commit-activity/m/avsthiago/kopylot)](https://img.shields.io/github/commit-activity/m/avsthiago/kopylot)
 [![License](https://img.shields.io/github/license/avsthiago/kopylot)](https://img.shields.io/github/license/avsthiago/kopylot)
 
-Your AI Powered Kubernetes Assistant
+Kopylot is an open-source AI-powered Kubernetes assistant. Its goal is to help developers and DevOps engineers to easily manage and monitor their Kubernetes clusters. 
 
-- **Github repository**: <https://github.com/avsthiago/kopylot/>
-- **Documentation** <https://avsthiago.github.io/kopylot/>
+KoPylot's idea is similar to [Kopilot](https://github.com/knight42/kopilot) from knight42. The main difference at the moment is the usage of Python for implementing it. 
 
-## Getting started with your project
+> *Note from the author*: I decided to create a new project instead of contributing to Kopilot mainly because I am a Python developer, and Kopilot is written in Go. I also believe that the tools for interacting with large language models are more mature in the Python ecosystem.
 
-First, create a repository on GitHub with the same name as this project, and then run the following commands:
+## 🔧 Features:
 
-``` bash
-git init -b main
-git add .
-git commit -m "init commit"
-git remote add origin git@github.com:avsthiago/kopylot.git
-git push -u origin main
+
+- 🚧👷‍♀️ **Under Construction!** 👷🚧
+
+
+## 🔨 Installation:
+
+You can install KoPylot using `pip`
+
+
+```
+pip install kopylot
 ```
 
-Finally, install the environment and the pre-commit hooks with 
+## 📖 Usage:
+
+- 🚧👷‍♀️ **Under Construction!** 👷🚧
+
+## 👥 Contributors:
+
+Kopylot is an open-source project and we welcome contributions from the community. If you are interested in contributing, please fork the repository and submit a pull request. We also welcome feedback and suggestions on how we can improve Kopylot.
+
+### Getting started as a contributor
+
+
+``` bash
+git clone https://github.com/avsthiago/kopylot.git
+cd kopylot
+```
+
+Install the environment and the pre-commit hooks with
 
 ```bash
 make install
 ```
 
-You are now ready to start development on your project! The CI/CD
-pipeline will be triggered when you open a pull request, merge to main,
-or when you create a new release.
+## 📄 License:
 
-To finalize the set-up for publishing to PyPi or Artifactory, see
-[here](https://fpgmaas.github.io/cookiecutter-poetry/features/publishing/#set-up-for-pypi).
-For activating the automatic documentation with MkDocs, see
-[here](https://fpgmaas.github.io/cookiecutter-poetry/features/mkdocs/#enabling-the-documentation-on-github).
-To enable the code coverage reports, see [here](https://fpgmaas.github.io/cookiecutter-poetry/features/codecov/).
+Kopylot is licensed under the MIT License. See LICENSE for more information.
 
-## Releasing a new version
 
-- Create an API Token on [Pypi](https://pypi.org/).
-- Add the API Token to your projects secrets with the name `PYPI_TOKEN` by visiting 
-[this page](https://github.com/avsthiago/kopylot/settings/secrets/actions/new).
-- Create a [new release](https://github.com/avsthiago/kopylot/releases/new) on Github. 
-Create a new tag in the form ``*.*.*``.
+## 📞 Contact:
 
-For more details, see [here](https://fpgmaas.github.io/cookiecutter-poetry/features/cicd/#how-to-trigger-a-release).
+If you have any questions or suggestions, feel free to contact me on [thiagoalves.ai](https://thiagoalves.ai/).
 
----
-
-Repository initiated with [fpgmaas/cookiecutter-poetry](https://github.com/fpgmaas/cookiecutter-poetry).
+Thank you for using Kopylot! 🙌
