@@ -5,7 +5,7 @@ import openai
 
 from . import prompts
 
-openai.api_key = os.environ["OPENAI_API_KEY"]
+openai.api_key = os.getenv("OPENAI_API_KEY", "")
 
 # Regular expression pattern to match common errors in pod descriptions
 error_pattern = re.compile(r"\b(unsupported|invalid|missing|failed|error)\b", re.IGNORECASE)
