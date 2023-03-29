@@ -24,6 +24,9 @@ pytest-cov = "^4.0.0"
 mypy = "^0.981"
 pre-commit = "^2.20.0"
 tox = "^3.25.1"
+black = {version = "^23.3.0", allow-prereleases = true}
+pytest-mock = "^3.10.0"
+isort = {version = "^6.0.0b2", allow-prereleases = true}
 
 [tool.poetry.group.docs.dependencies]
 mkdocs = "^1.4.2"
