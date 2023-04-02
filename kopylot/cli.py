@@ -3,11 +3,14 @@ from typing import List
 
 import rich
 import typer
+from InquirerPy import inquirer
 from rich.console import Console
 from rich.panel import Panel
+from rich.syntax import Syntax
 from rich.text import Text
 
 from kopylot.audit import create_printtable_table, run_audit
+from kopylot.chat import run_chat
 from kopylot.diagnose import run_diagnose
 from kopylot.utils import ai_print
 
@@ -82,6 +85,41 @@ def audit(
     print("\n")
 
     return audit_result
+
+
+@app.command()
+def chat() -> None:
+    """
+    Start a chat with kopylot to generate kubectl commands based your inputs.
+    """
+    while True:
+        user_prompt = inquirer.text(
+            message="\nAsk me something:", qmark="", amark="", long_instruction="\u2139\ufe0f  Empty to quit."
+        ).execute()
+        if user_prompt == "":
+            break
+
+        with console.status("[bold green]Generting kubectl command..."):
+            command = run_chat(user_prompt)
+            # command = (
+            #     "kubectl get pods -o jsonpath='{.items[].spec.containers[].image}' | tr -s '[[:space:]]' | sort | uniq"
+            #     " | wc -l"
+            # )
+
+        rich.print(
+            Panel(
+                Syntax(command, "bash", theme="native"),
+                title="\U0001f916 Your kubectl command",
+                title_align="center",
+                border_style="green",
+                expand=False,
+            )
+        )
+        print("\n")
+
+        confirmation = inquirer.confirm(message="Run the command?", qmark="", amark="", default=True).execute()
+        if confirmation:
+            subprocess.run(command, shell=True)
 
 
 if __name__ == "__main__":
