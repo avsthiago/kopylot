@@ -7,7 +7,7 @@ from rich.console import Console
 from rich.panel import Panel
 from rich.text import Text
 
-from kopylot.audit import run_audit
+from kopylot.audit import create_printtable_table, run_audit
 from kopylot.diagnose import run_diagnose
 from kopylot.utils import ai_print
 
@@ -50,7 +50,9 @@ def diagnose(
 
     with console.status("[bold green]Running diagnosis..."):
         diagnose_result: str = run_diagnose(resource_type, describe_decoded_result)
+    print("\n")
     ai_print(f"Diagnosis for the {resource_type.title()} {resource_name}", diagnose_result, no_color)
+    print("\n")
 
     return diagnose_result
 
@@ -74,7 +76,10 @@ def audit(
 
     with console.status("[bold green]Running audit..."):
         audit_result: str = run_audit(resource_type, get_yaml_result_decoded)
-    ai_print(f"Audit for the {resource_type.title()} {resource_name}", audit_result, no_color, style="bold red")
+    print("\n")
+    table_title = f"\U0001f916 Audit for the {resource_type.title()} {resource_name}"
+    console.print(create_printtable_table(audit_result, table_title, no_color))
+    print("\n")
 
     return audit_result
 
