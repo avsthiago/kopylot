@@ -18,18 +18,57 @@ KoPylot's idea is similar to [Kopilot](https://github.com/knight42/kopilot) from
 - 🚧👷‍♀️ **Under Construction!** 👷🚧
 
 
-## 🔨 Installation:
+## 🚀 Quick Start:
 
-You can install KoPylot using `pip`
+1. Requests an API key from [OpenAI](https://help.openai.com/en/articles/4936850-where-do-i-find-my-secret-api-key).
+2. Export the key using the following command:
 
-
+```bash
+export KOPYLOT_AUTH_TOKEN=your_api_key
+```
+3. Install Kopylot using pip:
 ```
 pip install kopylot
 ```
 
+4. Run Kopylot:
+```
+kopylot --help
+```
+
+
 ## 📖 Usage:
 
-- 🚧👷‍♀️ **Under Construction!** 👷🚧
+```
+Usage: kopylot [OPTIONS] COMMAND [ARGS]...                     
+                                                                
+╭─ Options ────────────────────────────────────────────────────╮
+│ --version                                                    │
+│ --install-completion     [bash|zsh|fish|p  Install           │
+│                          owershell|pwsh]   completion for    │
+│                                            the specified     │
+│                                            shell.            │
+│                                            [default: None]   │
+│ --show-completion        [bash|zsh|fish|p  Show completion   │
+│                          owershell|pwsh]   for the specified │
+│                                            shell, to copy it │
+│                                            or customize the  │
+│                                            installation.     │
+│                                            [default: None]   │
+│ --help                                     Show this message │
+│                                            and exit.         │
+╰──────────────────────────────────────────────────────────────╯
+╭─ Commands ───────────────────────────────────────────────────╮
+│ audit     Audit a pod, deployment, or service using an LLM   │
+│           model.                                             │
+│ chat      Start a chat with kopylot to generate kubectl      │
+│           commands based your inputs.                        │
+│ ctl       A wrapper around kubectl. The arguments passed to  │
+│           the ctl subcommand are interpreted by kubectl.     │
+│ diagnose  Diagnose a resource e.g. pod, deployment, or       │
+│           service using an LLM model.                        │
+╰──────────────────────────────────────────────────────────────╯
+```
 
 ## 👥 Contributors:
 
