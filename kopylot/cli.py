@@ -13,11 +13,10 @@ from kopylot.audit import create_printtable_table, run_audit
 from kopylot.chat import run_chat
 from kopylot.diagnose import run_diagnose
 from kopylot.utils import ai_print
+from kopylot.version import __version__
 
-app = typer.Typer()
+app = typer.Typer(no_args_is_help=True)
 console = Console()
-
-__version__ = "0.0.3"
 
 
 @app.command()
@@ -103,10 +102,6 @@ def chat() -> None:
 
         with console.status("[bold green]Generting kubectl command..."):
             command = run_chat(user_prompt)
-            # command = (
-            #     "kubectl get pods -o jsonpath='{.items[].spec.containers[].image}' | tr -s '[[:space:]]' | sort | uniq"
-            #     " | wc -l"
-            # )
 
         rich.print(
             Panel(

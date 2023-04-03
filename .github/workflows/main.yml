@@ -27,6 +27,8 @@ jobs:
 
   tox:
     runs-on: ubuntu-latest
+    env:
+      KOPYLOT_AUTH_TOKEN: NO_TOKEN
     strategy:
       matrix:
         python-version: ['3.8', '3.9', '3.10', '3.11']
