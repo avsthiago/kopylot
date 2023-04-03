@@ -12,6 +12,7 @@ from rich.text import Text
 from kopylot.audit import create_printtable_table, run_audit
 from kopylot.chat import run_chat
 from kopylot.diagnose import run_diagnose
+from kopylot.llm import validate_token
 from kopylot.utils import ai_print
 from kopylot.version import __version__
 
@@ -133,5 +134,15 @@ def common(
     pass
 
 
+def main() -> None:
+    if validate_token():
+        app()
+    else:
+        import sys
+
+        rich.print("[bold red]Error:[/bold red] KOPYLOT_AUTH_TOKEN not set.")
+        sys.exit(1)
+
+
 if __name__ == "__main__":
-    app()
+    main()

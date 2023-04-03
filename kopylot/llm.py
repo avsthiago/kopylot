@@ -1,14 +1,12 @@
 import os
-import sys
 
 import openai
-import rich
 
 openai.api_key = os.getenv("KOPYLOT_AUTH_TOKEN", "")
 
-if not openai.api_key:
-    rich.print("[bold red]Error:[/bold red] KOPYLOT_AUTH_TOKEN is not set.")
-    sys.exit(1)
+
+def validate_token() -> bool:
+    return openai.api_key != ""
 
 
 def ask_llm(prompt: str, temperature: float = 0.7, max_tokens: int = 2048) -> str:

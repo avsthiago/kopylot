@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "kopylot"
-version = "0.0.0"
+version = "0.0.3"
 description = "Your AI Powered Kubernetes Assistant"
 authors = ["Thiago Alves"]
 repository = "https://github.com/avsthiago/kopylot"
@@ -11,7 +11,7 @@ packages = [
 ]
 
 [tool.poetry.scripts]
-kopylot = "kopylot.cli:app"
+kopylot = "kopylot.cli:main"
 
 [tool.poetry.dependencies]
 python = ">=3.8,<4.0"
