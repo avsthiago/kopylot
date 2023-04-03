@@ -40,34 +40,28 @@ kopylot --help
 ## 📖 Usage:
 
 ```
-Usage: kopylot [OPTIONS] COMMAND [ARGS]...                     
-                                                                
-╭─ Options ────────────────────────────────────────────────────╮
-│ --version                                                    │
-│ --install-completion     [bash|zsh|fish|p  Install           │
-│                          owershell|pwsh]   completion for    │
-│                                            the specified     │
-│                                            shell.            │
-│                                            [default: None]   │
-│ --show-completion        [bash|zsh|fish|p  Show completion   │
-│                          owershell|pwsh]   for the specified │
-│                                            shell, to copy it │
-│                                            or customize the  │
-│                                            installation.     │
-│                                            [default: None]   │
-│ --help                                     Show this message │
-│                                            and exit.         │
-╰──────────────────────────────────────────────────────────────╯
-╭─ Commands ───────────────────────────────────────────────────╮
-│ audit     Audit a pod, deployment, or service using an LLM   │
-│           model.                                             │
-│ chat      Start a chat with kopylot to generate kubectl      │
-│           commands based your inputs.                        │
-│ ctl       A wrapper around kubectl. The arguments passed to  │
-│           the ctl subcommand are interpreted by kubectl.     │
-│ diagnose  Diagnose a resource e.g. pod, deployment, or       │
-│           service using an LLM model.                        │
-╰──────────────────────────────────────────────────────────────╯
+Usage: kopylot [OPTIONS] COMMAND [ARGS]...                                           
+                                                                                      
+╭─ Options ──────────────────────────────────────────────────────────────────────────╮
+│ --version                                                                          │
+│ --install-completion        [bash|zsh|fish|powershell  Install completion for the  │
+│                             |pwsh]                     specified shell.            │
+│                                                        [default: None]             │
+│ --show-completion           [bash|zsh|fish|powershell  Show completion for the     │
+│                             |pwsh]                     specified shell, to copy it │
+│                                                        or customize the            │
+│                                                        installation.               │
+│                                                        [default: None]             │
+│ --help                                                 Show this message and exit. │
+╰────────────────────────────────────────────────────────────────────────────────────╯
+╭─ Commands ─────────────────────────────────────────────────────────────────────────╮
+│ audit     Audit a pod, deployment, or service using an LLM model.                  │
+│ chat      Start a chat with kopylot to generate kubectl commands based your        │
+│           inputs.                                                                  │
+│ ctl       A wrapper around kubectl. The arguments passed to the ctl subcommand are │
+│           interpreted by kubectl.                                                  │
+│ diagnose  Diagnose a resource e.g. pod, deployment, or service using an LLM model. │
+╰────────────────────────────────────────────────────────────────────────────────────╯
 ```
 
 ## 👥 Contributors:
