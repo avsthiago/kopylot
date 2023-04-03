@@ -12,10 +12,12 @@ KoPylot's idea is similar to [Kopilot](https://github.com/knight42/kopilot) from
 
 > *Note from the author*: I decided to create a new project instead of contributing to Kopilot mainly because I am a Python developer, and Kopilot is written in Go. I also believe that the tools for interacting with large language models are more mature in the Python ecosystem.
 
-## 🔧 Features:
+## 💫 Features:
 
-
-- 🚧👷‍♀️ **Under Construction!** 👷🚧
+- 🔍 **Audit**: Audit a resources e.g. pods, deployments, or services using an LLM model.
+- 🩺 **Diagnose**: Diagnose resources e.g. pods, deployments, or services using an LLM model.
+- 💬 **Chat**: Start a chat with kopylot to generate kubectl commands based on your prompts.
+- ☸️ **Ctl**: A wrapper around kubectl. The arguments passed to the `ctl` subcommand are interpreted by kubectl.
 
 
 ## 🚀 Quick Start:
@@ -92,3 +94,12 @@ Kopylot is licensed under the MIT License. See [LICENSE](LICENSE) for more infor
 If you have any questions or suggestions, feel free to contact me on [https://thiagoalves.ai](https://thiagoalves.ai/contact/).
 
 Thank you for using Kopylot! 🙌
+
+## 🗺️ Roadmap:
+
+- [x] Wrap the kubectl command using `ctl` subcommand.
+- [x] Create the `audit` subcommand to audit kubernetes resources.
+- [x] Create the `diagnose` subcommand to diagnose kubernetes resources.
+- [x] Create the `chat` subcommand to generate kubectl commands using from the user prompts.
+- [ ] Make it possible to use other LLM models, not just from OpenAI.
+- [ ] Integrate [LangChain](https://github.com/hwchase17/langchain) into Kopylot to make it as autonomous as possible.
