@@ -84,11 +84,11 @@ make install
 
 ## 📄 License:
 
-Kopylot is licensed under the MIT License. See LICENSE for more information.
+Kopylot is licensed under the MIT License. See [LICENSE](LICENSE) for more information.
 
 
-## 📞 Contact:
+## 📞 Contact: 
 
-If you have any questions or suggestions, feel free to contact me on [thiagoalves.ai](https://thiagoalves.ai/).
+If you have any questions or suggestions, feel free to contact me on [https://thiagoalves.ai](https://thiagoalves.ai/contact/).
 
 Thank you for using Kopylot! 🙌
