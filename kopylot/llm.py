@@ -7,8 +7,7 @@ import rich
 openai.api_key = os.getenv("KOPYLOT_AUTH_TOKEN", "")
 
 if not openai.api_key:
-    console = rich.console.Console()
-    console.print("[bold red]Error:[/bold red] KOPYLOT_AUTH_TOKEN is not set.")
+    rich.print("[bold red]Error:[/bold red] KOPYLOT_AUTH_TOKEN is not set.")
     sys.exit(1)
 
 
