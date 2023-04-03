@@ -17,6 +17,8 @@ from kopylot.utils import ai_print
 app = typer.Typer()
 console = Console()
 
+__version__ = "0.0.3"
+
 
 @app.command()
 def ctl(args: List[str]) -> subprocess.CompletedProcess:
@@ -36,7 +38,7 @@ def diagnose(
     no_color: bool = typer.Option(False, "--no-color", help="Disable color output and borders"),
 ) -> str:
     """
-    Diagnose a pod, deployment, or service using an LLM model.
+    Diagnose a resource e.g. pod, deployment, or service using an LLM model.
     """
     # run `kubectl describe` for the resource
     describe_command = f"kubectl describe {resource_type} {resource_name}"
@@ -120,6 +122,20 @@ def chat() -> None:
         confirmation = inquirer.confirm(message="Run the command?", qmark="", amark="", default=True).execute()
         if confirmation:
             subprocess.run(command, shell=True)
+
+
+def version_callback(value: bool) -> None:
+    if value:
+        typer.echo(f"KoPylot Version: {__version__}")
+        raise typer.Exit()
+
+
+@app.callback()
+def common(
+    ctx: typer.Context,
+    version: bool = typer.Option(None, "--version", callback=version_callback),
+) -> None:
+    pass
 
 
 if __name__ == "__main__":
