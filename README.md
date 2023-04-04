@@ -66,30 +66,55 @@ Usage: kopylot [OPTIONS] COMMAND [ARGS]...
 ╰────────────────────────────────────────────────────────────────────────────────────╯
 ```
 
-## 👥 Contributors:
 
-Kopylot is an open-source project and we welcome contributions from the community. If you are interested in contributing, please fork the repository and submit a pull request. We also welcome feedback and suggestions on how we can improve Kopylot.
+## 🤝 Contributions: 
+Kopylot is an open-source project and we welcome contributions from the community. There are a couple of ways to set up your development environment and start contributing to the project.
 
-### Getting started as a contributor
+### 🐳 Using a Dev Container
+KoPylot supports development using a dev container, which helps you set up a consistent and isolated environment for development. This makes it easy to get started without having to worry about conflicting dependencies or configurations on your local machine.
 
+**To get started with a dev container:**
 
-``` bash
-git clone https://github.com/avsthiago/kopylot.git
-cd kopylot
-```
+1. Install [Docker](https://www.docker.com/) and [Visual Studio Code](https://code.visualstudio.com/).
+2. Install the [Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension in Visual Studio Code.
+3. Clone the KoPylot repository and open the project folder in Visual Studio Code.
+4. Press `F1`, type `Remote-Containers: Reopen in Container`, and hit `Enter`. Visual Studio Code will build the dev container and reopen the project inside it.
 
-Install the environment and the pre-commit hooks with
+You're now ready to start contributing to KoPylot using the dev container!
 
-```bash
-make install
-```
+### 🛠️ Local Setup
+
+If you prefer to set up your development environment locally, make sure you have [Poetry](https://python-poetry.org/) installed on your system. Then, follow these steps:
+
+1. Clone the KoPylot repository:
+
+   ```bash
+   git clone https://github.com/avsthiago/kopylot
+   ```
+
+2. Navigate to the project folder:
+
+   ```bash
+   cd kopylot
+   ```
+
+3. Install the project dependencies using Poetry:
+
+   ```bash
+   make install
+   ```
+
+You're now ready to start contributing to KoPylot using your local setup! 😄
+
+Before submitting a pull request, please make sure to test your changes and follow the project's coding guidelines. We appreciate your contributions and look forward to collaborating with you! 🎉
+
 
 ## 📄 License:
 
 Kopylot is licensed under the MIT License. See [LICENSE](LICENSE) for more information.
 
 
-## 📞 Contact: 
+## ☎️ Contact: 
 
 If you have any questions or suggestions, feel free to contact me on [https://thiagoalves.ai](https://thiagoalves.ai/contact/).
 
