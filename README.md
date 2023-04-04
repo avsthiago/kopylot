@@ -15,9 +15,16 @@ KoPylot's idea is similar to [Kopilot](https://github.com/knight42/kopilot) from
 ## 💫 Features:
 
 - 🔍 **Audit**: Audit a resources e.g. pods, deployments, or services using an LLM model.
+![Audit](./resources/audit.png)
+
 - 🩺 **Diagnose**: Diagnose resources e.g. pods, deployments, or services using an LLM model.
+![Diagnose](./resources/diagnose.png)
+
 - 💬 **Chat**: Start a chat with kopylot to generate kubectl commands based on your prompts.
+![Chat](./resources/chat.png)
+
 - ☸️ **Ctl**: A wrapper around kubectl. The arguments passed to the `ctl` subcommand are interpreted by kubectl.
+![Ctl](./resources/ctl.png)
 
 
 ## 🚀 Quick Start:
@@ -100,7 +107,7 @@ If you prefer to set up your development environment locally, make sure you have
 
 3. Install the project dependencies using Poetry:
 
-   ```bash
+   ```go
    make install
    ```
 
