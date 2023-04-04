@@ -18,12 +18,17 @@ def json_to_dict(json_str: str) -> ListDict:
         return json_loaded
 
 
+def standardize_keys_to_lower(original_dict: Dict[str, str]) -> Dict[str, str]:
+    return {key.lower(): value for key, value in original_dict.items()}
+
+
 def extract_table_from_response(s: str) -> ListDict:
     match = re.search(r"\[([^]]+)\]", s)
     extracted_table: ListDict = [{"vulnerability": "No vulnerabilities found", "severity": "n/a"}]
     if match:
         json_list_str = match.group(0)
         extracted_table = json_to_dict(json_list_str)
+        extracted_table = [standardize_keys_to_lower(item) for item in extracted_table]
     return extracted_table
 
 
@@ -50,8 +55,10 @@ def severity_color(severity: str, no_color: bool) -> str:
 
 
 def format_table(table_tems: ListDict, title: str, no_color: bool = False) -> Table:
-    table = Table(title=title, show_header=True, header_style="bold magenta", show_lines=True, title_style="bold")
-    table.add_column("Vulnerability", justify="left", style="", no_wrap=True)
+    table = Table(
+        title=title, show_header=True, header_style="bold magenta", show_lines=True, title_style="bold justify=center"
+    )
+    table.add_column("Vulnerability", justify="left", no_wrap=False)
     table.add_column("Severity", justify="center", style="bold")
 
     for item in table_tems:
