@@ -113,7 +113,6 @@ def chat() -> None:
                 expand=False,
             )
         )
-        print("\n")
 
         confirmation = inquirer.confirm(message="Run the command?", qmark="", amark="", default=True).execute()
         if confirmation:
