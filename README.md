@@ -8,16 +8,14 @@
 
 Kopylot is an open-source AI-powered Kubernetes assistant. Its goal is to help developers and DevOps engineers to easily manage and monitor their Kubernetes clusters. 
 
-KoPylot's idea is similar to [Kopilot](https://github.com/knight42/kopilot) from knight42. The main difference at the moment is the usage of Python for implementing it. 
-
-> *Note from the author*: I decided to create a new project instead of contributing to Kopilot mainly because I am a Python developer, and Kopilot is written in Go. I also believe that the tools for interacting with large language models are more mature in the Python ecosystem.
+You can read more about the project in the [blog post](https://medium.com/@thiagoalves/introducing-kopylot-a-kubernetes-ai-assistant-264cff0e7846).
 
 ## 💫 Features:
 
-- 🔍 **Audit**: Audit a resources e.g. pods, deployments, or services using an LLM model.
+- 🔍 **Audit**: Audit a resource, such as pods, deployments, or services using an LLM model.
 ![Audit](./resources/audit.png)
 
-- 🩺 **Diagnose**: Diagnose resources e.g. pods, deployments, or services using an LLM model.
+- 🩺 **Diagnose**: Diagnose resources, such as pods, deployments, or services using an LLM model.
 ![Diagnose](./resources/diagnose.png)
 
 - 💬 **Chat**: Start a chat with kopylot to generate kubectl commands based on your prompts.
@@ -135,3 +133,7 @@ Thank you for using Kopylot! 🙌
 - [x] Create the `chat` subcommand to generate kubectl commands using from the user prompts.
 - [ ] Make it possible to use other LLM models, not just from OpenAI.
 - [ ] Integrate [LangChain](https://github.com/hwchase17/langchain) into Kopylot to make it as autonomous as possible.
+
+## ~ Similar Projects:
+
+One of the similar projects that I found is the [Kopilot](https://github.com/knight42/kopilot) from knight42. It is also a Kubernetes assistant which uses LLMs behind the scenes. The main difference from KoPylot is that it is written in Go. At the moment, it doesn't have the Chat command implemented, but it can respond in different languages.
