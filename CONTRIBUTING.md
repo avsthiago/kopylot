@@ -117,7 +117,7 @@ go.
 > ```
 
 | 6. When you are done making changes, check that your changes pass the
-  formatting validations.
+  formatting checks.
 
 > ``` bash
 > make check
