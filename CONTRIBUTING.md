@@ -136,19 +136,21 @@ go.
 > pyenv install 3.11
 > ```
 >
-> Use the exact versions that where installed by the 4 commands (or see which
-> pyenv versions are installed with `pyenv versions`.
+> In the command below, replace the `x` by the exact versions that where
+> installed by the 4 commands (or see which pyenv versions are installed with
+> `pyenv versions`.
 >
 > Also, the order of the versions is important. The first version in the list
 > will be the default version selected by poetry install if the setting
-> `virtualenvs.prefer-active-python = true` is set.
+> `virtualenvs.prefer-active-python = true` is set. So, set your preferred
+> Python version as first argument to `pyenv global`.
 >
 > ``` bash
 > pyenv global 3.11.x 3.10.x 3.9.x 3.8.x
 > ```
 >
-> NOTE: to run tox successfully, there should not be a `.python-version` present.
-> That .python-version may have been created by the `pyenv local <x.y.z>` command
+> NOTE: to run tox successfully, there should _not_ be a `.python-version` file present.
+> That `.python-version` may have been created by the `pyenv local <x.y.z>` command
 > in the step 3 above. You have to remove it again to run tox successfully for
 > all versions. When the .python-version is present, the errors reported by
 > tox are:
@@ -168,7 +170,7 @@ go.
 > python3.11 -V  # => Python 3.11.3
 > ```
 >
-> After this preparation and validation tox should pass the tests on all
+> After this preparation and validation, tox should run the tests successfully on all
 > python versions.
 >
 > ``` bash
