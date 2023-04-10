@@ -6,7 +6,7 @@
 [![Commit activity](https://img.shields.io/github/commit-activity/m/avsthiago/kopylot)](https://img.shields.io/github/commit-activity/m/avsthiago/kopylot)
 [![License](https://img.shields.io/github/license/avsthiago/kopylot)](https://img.shields.io/github/license/avsthiago/kopylot)
 
-Kopylot is an open-source AI-powered Kubernetes assistant. Its goal is to help developers and DevOps engineers to easily manage and monitor their Kubernetes clusters. 
+KoPylot is an open-source AI-powered Kubernetes assistant. Its goal is to help developers and DevOps engineers to easily manage and monitor their Kubernetes clusters. 
 
 You can read more about the project in the [blog post](https://medium.com/@thiagoalves/introducing-kopylot-a-kubernetes-ai-assistant-264cff0e7846).
 
@@ -18,7 +18,7 @@ You can read more about the project in the [blog post](https://medium.com/@thiag
 - 🩺 **Diagnose**: Diagnose resources, such as pods, deployments, or services using an LLM model.
 ![Diagnose](./resources/diagnose.png)
 
-- 💬 **Chat**: Start a chat with kopylot to generate kubectl commands based on your prompts.
+- 💬 **Chat**: Start a chat with KoPylot to generate kubectl commands based on your prompts.
 ![Chat](./resources/chat.png)
 
 - ☸️ **Ctl**: A wrapper around kubectl. The arguments passed to the `ctl` subcommand are interpreted by kubectl.
@@ -33,12 +33,12 @@ You can read more about the project in the [blog post](https://medium.com/@thiag
 ```bash
 export KOPYLOT_AUTH_TOKEN=your_api_key
 ```
-3. Install Kopylot using pip:
+3. Install KoPylot using pip:
 ```
 pip install kopylot
 ```
 
-4. Run Kopylot:
+4. Run KoPylot:
 ```
 kopylot --help
 ```
@@ -73,7 +73,7 @@ Usage: kopylot [OPTIONS] COMMAND [ARGS]...
 
 
 ## 🤝 Contributions: 
-Kopylot is an open-source project and we welcome contributions from the community. There are a couple of ways to set up your development environment and start contributing to the project.
+KoPylot is an open-source project and we welcome contributions from the community. There are a couple of ways to set up your development environment and start contributing to the project.
 
 ### 🐳 Using a Dev Container
 KoPylot supports development using a dev container, which helps you set up a consistent and isolated environment for development. This makes it easy to get started without having to worry about conflicting dependencies or configurations on your local machine.
@@ -116,14 +116,14 @@ Before submitting a pull request, please make sure to test your changes and foll
 
 ## 📄 License:
 
-Kopylot is licensed under the MIT License. See [LICENSE](LICENSE) for more information.
+KoPylot is licensed under the MIT License. See [LICENSE](LICENSE) for more information.
 
 
 ## ☎️ Contact: 
 
 If you have any questions or suggestions, feel free to contact me on [https://thiagoalves.ai](https://thiagoalves.ai/contact/).
 
-Thank you for using Kopylot! 🙌
+Thank you for using KoPylot! 🙌
 
 ## 🗺️ Roadmap:
 
@@ -132,7 +132,7 @@ Thank you for using Kopylot! 🙌
 - [x] Create the `diagnose` subcommand to diagnose kubernetes resources.
 - [x] Create the `chat` subcommand to generate kubectl commands using from the user prompts.
 - [ ] Make it possible to use other LLM models, not just from OpenAI.
-- [ ] Integrate [LangChain](https://github.com/hwchase17/langchain) into Kopylot to make it as autonomous as possible.
+- [ ] Integrate [LangChain](https://github.com/hwchase17/langchain) into KoPylot to make it as autonomous as possible.
 
 ## ~ Similar Projects:
 
