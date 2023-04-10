@@ -79,18 +79,8 @@ go.
 >
 > NOTE: later on, to be able to run the `tox` command with 4 different
 > versions, a set-up may be needed where python 3.8.x, 3.9.x, 3.10.x and
-> 3.11.x are needed. One possible way to do this is:
->
-> ```bash
-> pyenv install 3.8
-> pyenv install 3.9
-> pyenv install 3.10
-> pyenv install 3.11
-> pyenv global 3.11.x 3.10.x 3.9.x 3.8.x  # use the exact patch versions that where installed
-> ```
-> A specfic trick is that the first version that is specified as "global" in
-> the command above will be used by the `poetry install` that is part of the
-> `make install` below.
+> 3.11.x are needed. A possible approach is described below. For now,
+> just setting a pyenv local to a proper version (e.g. 3.11) is enough.
 >
 > Then, install the environment with:
 >
@@ -132,13 +122,59 @@ go.
 | 8. Before raising a pull request you should also run tox. This will
   run the tests across different versions of Python:
 
+> Running tox for the different python versions involves some complexity.
+> This requires you to have multiple versions of python installed. This
+> step is also triggered in the CI/CD pipeline, so you could also choose
+> to skip this step locally.
+>
+> If you want to run it locally, one possible way to do this is:
+>
+> ```bash
+> pyenv install 3.8
+> pyenv install 3.9
+> pyenv install 3.10
+> pyenv install 3.11
+> ```
+>
+> Use the exact versions that where installed by the 4 commands (or see which
+> pyenv versions are installed with `pyenv versions`.
+>
+> Also, the order of the versions is important. The first version in the list
+> will be the default version selected by poetry install if the setting
+> `virtualenvs.prefer-active-python = true` is set.
+>
+> ``` bash
+> pyenv global 3.11.x 3.10.x 3.9.x 3.8.x
+> ```
+>
+> NOTE: to run tox successfully, there should not be a `.python-version` present.
+> That .python-version may have been created by the `pyenv local <x.y.z>` command
+> in the step 3 above. You have to remove it again to run tox successfully for
+> all versions. When the .python-version is present, the errors reported by
+> tox are:
+>
+> ``` bash
+> py38 recreate: .../kopylot/.tox/py38
+> ERROR: InterpreterNotFound: python3.8
+> py39 recreate: .../kopylot/.tox/py39
+> ERROR: InterpreterNotFound: python3.9
+> ```
+> A validation that all python versions are present and callable could be:
+>
+> ```bash
+> python3.8 -V  # => Python 3.8.16
+> python3.9 -V  # => Python 3.9.16
+> python3.10 -V  # => Python 3.10.11
+> python3.11 -V  # => Python 3.11.3
+> ```
+>
+> After this preparation and validation tox should pass the tests on all
+> python versions.
+>
 > ``` bash
 > poetry run tox
 > ```
 >
-> This requires you to have multiple versions of python installed. This
-> step is also triggered in the CI/CD pipeline, so you could also choose
-> to skip this step locally.
 
 | 9. Commit your changes and push your branch to GitHub:
 
