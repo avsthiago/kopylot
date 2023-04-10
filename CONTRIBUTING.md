@@ -161,6 +161,7 @@ go.
 > py39 recreate: .../kopylot/.tox/py39
 > ERROR: InterpreterNotFound: python3.9
 > ```
+>
 > A validation that all python versions are present and callable could be:
 >
 > ```bash
