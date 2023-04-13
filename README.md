@@ -33,6 +33,14 @@ You can read more about the project in the [blog post](https://medium.com/@thiag
 ```bash
 export KOPYLOT_AUTH_TOKEN=your_api_key
 ```
+
+NOTE: If you want to avoid having the key in your .bashrc, .oh-my-zsh/custom dir,
+or your .bash_history or .zsh_history, a possible trick is to do something like this:
+
+```bash
+export KOPYLOT_AUTH_TOKEN=$(cat ../../../keys/openai)
+```
+
 3. Install KoPylot using pip:
 ```
 pip install kopylot
