@@ -77,20 +77,21 @@ go.
 > pyenv local <x.y.z>
 > ```
 >
-> Then, install and activate the environment with:
+> NOTE: later on, to be able to run the `tox` command with 4 different
+> versions, a set-up may be needed where python 3.8.x, 3.9.x, 3.10.x and
+> 3.11.x are needed. A possible approach is described below. For now,
+> just setting a pyenv local to a proper version (e.g. 3.11) is enough.
+>
+> Then, install the environment with:
 >
 > ``` bash
-> poetry install
-> poetry shell
+> make install
 > ```
+>
+> This will run the poetry install and also install the pre-commit.
+>
 
-| 4. Install pre-commit to run linters/formatters at commit time:
-
-> ``` bash
-> poetry run pre-commit install
-> ```
-
-| 5. Create a branch for local development:
+| 4. Create a branch for local development:
 
 > ``` bash
 > git checkout -b name-of-your-bugfix-or-feature
@@ -98,34 +99,87 @@ go.
 >
 > Now you can make your changes locally.
 
-| 6. Don\'t forget to add test cases for your added functionality to the
+| 5. Do not forget to add test cases for your added functionality to the
   `tests` directory.
+> You can run the tests with
+> ``` bash
+> make test
+> ```
 
-| 7. When you\'re done making changes, check that your changes pass the
-  formatting tests.
+| 6. When you are done making changes, check that your changes pass the
+  formatting checks.
 
 > ``` bash
 > make check
 > ```
 
-| 8. Now, validate that all unit tests are passing:
+| 7. Now, validate that all unit tests are passing:
 
 > ``` bash
 > make test
 > ```
 
-| 9. Before raising a pull request you should also run tox. This will
+| 8. Before raising a pull request you should also run tox. This will
   run the tests across different versions of Python:
 
-> ``` bash
-> tox
-> ```
->
+> Running tox for the different python versions involves some complexity.
 > This requires you to have multiple versions of python installed. This
 > step is also triggered in the CI/CD pipeline, so you could also choose
 > to skip this step locally.
+>
+> If you want to run it locally, one possible way to do this is:
+>
+> ```bash
+> pyenv install 3.8
+> pyenv install 3.9
+> pyenv install 3.10
+> pyenv install 3.11
+> ```
+>
+> In the command below, replace the `x` by the exact versions that where
+> installed by the 4 commands (or see which pyenv versions are installed with
+> `pyenv versions`.
+>
+> Also, the order of the versions is important. The first version in the list
+> will be the default version selected by poetry install if the setting
+> `virtualenvs.prefer-active-python = true` is set. So, set your preferred
+> Python version as first argument to `pyenv global`.
+>
+> ``` bash
+> pyenv global 3.11.x 3.10.x 3.9.x 3.8.x
+> ```
+>
+> NOTE: to run tox successfully, there should _not_ be a `.python-version` file present.
+> That `.python-version` may have been created by the `pyenv local <x.y.z>` command
+> in the step 3 above. You have to remove it again to run tox successfully for
+> all versions. When the .python-version is present, the errors reported by
+> tox are:
+>
+> ``` bash
+> py38 recreate: .../kopylot/.tox/py38
+> ERROR: InterpreterNotFound: python3.8
+> py39 recreate: .../kopylot/.tox/py39
+> ERROR: InterpreterNotFound: python3.9
+> ```
+>
+> A validation that all python versions are present and callable could be:
+>
+> ```bash
+> python3.8 -V  # => Python 3.8.16
+> python3.9 -V  # => Python 3.9.16
+> python3.10 -V  # => Python 3.10.11
+> python3.11 -V  # => Python 3.11.3
+> ```
+>
+> After this preparation and validation, tox should run the tests successfully on all
+> python versions.
+>
+> ``` bash
+> poetry run tox
+> ```
+>
 
-| 10. Commit your changes and push your branch to GitHub:
+| 9. Commit your changes and push your branch to GitHub:
 
 > ``` bash
 > git add .
@@ -133,7 +187,7 @@ go.
 > git push origin name-of-your-bugfix-or-feature
 > ```
 
-| 11. Submit a pull request through the GitHub website.
+| 10. Submit a pull request through the GitHub website.
 
 ## Pull Request Guidelines
 
