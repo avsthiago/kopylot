@@ -2,15 +2,16 @@ import os
 import sys
 
 import openai
+import rich
 
 openai.api_key = os.getenv("KOPYLOT_AUTH_TOKEN", "")
 
 
 def validate_token() -> None:
     if openai.api_key == "":
-        print(
-            "Please set your OpenAI API key as an environment variable named KOPYLOT_AUTH_TOKEN",
-            file=sys.stderr,
+        rich.print(
+            "[bold red]Error:[/bold red] Please set your OpenAI API key as an environment variable named"
+            " KOPYLOT_AUTH_TOKEN"
         )
         sys.exit(1)
 
